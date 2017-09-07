@@ -1,12 +1,10 @@
 var wrapLog = function (callback, name) {
-
   return function(){
     var result = callback.apply(this, arguments);
-    args = Array.from(arguments).join(', ');
+    var args = Array.from(arguments).join(', ');
     console.log(name + '(' + args + ') => ' + result);
     return result;
   };
-
 };
 
 var area = function (x, y) {
